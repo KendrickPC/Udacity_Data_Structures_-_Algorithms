@@ -1,3 +1,6 @@
+# Sudoku Help
+# https://knowledge.udacity.com/questions/42154
+
 correct = [[1,2,3],
            [2,3,1],
            [3,1,2]]
