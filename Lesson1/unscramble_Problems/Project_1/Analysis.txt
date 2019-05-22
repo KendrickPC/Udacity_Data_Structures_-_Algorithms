@@ -11,32 +11,24 @@
   n = 1 because there is only one pass through 
   of the for loop with the calls.csv file.
 
-  Therefore, the total of n would be 1 + 1 = 2. My guess is that the
-  efficiency is O(2n) for the texts.csv file and calls.csv file
-  combined.
+  My guess is that the efficiency is O(1) or 0(n) for the texts.csv file and
+  calls.csv file combined.
 
 ##### Task1:
-  Calculation of O(n), for the uniqueNumbers = [] array is 1 because there 
-  will be 1 call through the array to check if a "new number" is unique 
-  in the list. 
+  Looping through texts number have each element in lists which has n total
+  element: O(n)
 
-  Calculation of O(n), for the texts.csv file, is 2. My assumption is that
-  n = 2 because there is one(1) pass through for the uniqueNumbers array, 
-  one pass through with the for loop for row[0], and one pass through  
-  for row[1] on the texts.csv file.
+  Looping through calls have each element in has an m total element: O(m)
 
-  Calculation of O(n), for the calls.csv file, is 2. My assumption is that
-  n = 2 because there is  one pass through for the row[0] array and 
-  one pass through with the row[1] array on the calls.csv file.
+  Combined, O(n+m) will be linear.
 
-  Therefore, the total of n would be 1 + 2 + 2 = 5. My guess is that O(n) equals 5
-  for the texts.csv file and calls.csv file combined.
+  The total time complexity is O(n).
 
 ##### Task2:
 
   My for loop, "for call in calls:" will take O(nlogn). Then, when comparing the total
   time spent on the phone, it would be another pass through of the dictionary, therefore
-  making the total time complexity something like 0(n+nlogn+1) or O(nlogn(n)). 
+  making the total time complexity something like 0(n^2)
 
 ##### Task3:
 

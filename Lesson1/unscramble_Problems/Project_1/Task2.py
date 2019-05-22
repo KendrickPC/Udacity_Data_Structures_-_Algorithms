@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# pep8 verified
 
 # Read file into texts and calls.
 import csv
@@ -23,11 +24,16 @@ for call in calls:
     # time_spent_on_phone for caller
     time_spent_on_phone[call[0]] = time_spent_on_phone.get(call[0], 0) + \
                                    int(call[3])
-    # time_spent_on_phone for reciever of phone call
+
+    # time_spent_on_phone for receiver of phone call
     time_spent_on_phone[call[1]] = time_spent_on_phone.get(call[1], 0) + \
-                                   int(call[3])
-    sum_of_time_on_phone_in_seconds = max(time_spent_on_phone.items(),
-                                          key=itemgetter(1))
+        int(call[3])
+
+# The maximum value needs to be calculated only once, hence to improve the
+# performance, instead of calculating this inside the for loop, I am
+# doing this calculation outside the loop.
+sum_of_time_on_phone_in_seconds = max(time_spent_on_phone.items(),
+                                      key=itemgetter(1))
 
 # print(sum_of_time_on_phone_in_seconds)
 # ('(080)33251027', 90456)
@@ -43,27 +49,3 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone
 during September 2016.".
 """
-
-"""
-Run Time Analysis:
-Worst Case O(n) Efficiency Report:
-
-  Calculation of O(n), for the calls.csv file, is 3. My assumption is that
-  n = 3 because there is one pass through collecting the outgoing call time,
-  one pass through for the receiving call time, and one pass through for my
-  time_spent_on_phone dictionary with the sum_of_time_on_phone_in_seconds
-  sorting.
-"""
-
-# pep8 verified
-
-#Task 2
-
-# accessing all the elements of calls.csv we have to access each element in list - time complexity : O(n)
-# add duration for both sender and reciever as time spending will be same for both update the record in dictonary of (telephonenumber and duration)
-
-# sorted the dictonary based on duration of call will take O(nlogn)
-
-# and accessing the first element in constant time
-
-# Total time complexity : O(n+nlogn+1) which is equvivalent to O(nlogn(n)) in worst case

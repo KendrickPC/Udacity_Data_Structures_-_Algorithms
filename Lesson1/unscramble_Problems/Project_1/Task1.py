@@ -36,24 +36,3 @@ How many different telephone numbers are there in the records?
 Print a message:
 "There are <count> different telephone numbers in the records."
 """
-
-"""
-Run Time Analysis:
-Worst Case O(n) Efficiency Report:
-
-  Calculation of O(n), for the uniqueNumbers = [] array is 1 because there 
-  will be 1 call through the array to check if a "new number" is unique 
-  in the list. 
-
-  Calculation of O(n), for the texts.csv file, is 2. My assumption is that
-  n = 2 because there is one(1) pass through for the uniqueNumbers array, 
-  one pass through with the for loop for row[0], and one pass through  
-  for row[1] on the texts.csv file.
-
-  Calculation of O(n), for the calls.csv file, is 2. My assumption is that
-  n = 2 because there is  one pass through for the row[0] array and 
-  one pass through with the row[1] array on the calls.csv file.
-
-  Therefore, the total of n would be 1 + 2 + 2 = 5. My guess is that O(n) equals 5
-  for the texts.csv file and calls.csv file combined.
-"""
