@@ -136,22 +136,36 @@ def union_and_intersection(element_1, element_2):
     for i in element_2:
         linked_list_2.append(i)
 
-    print("\nUnion:")
+    print("Union:")
     print(union(linked_list_1, linked_list_2))
 
-    print("\nIntersection:")
+    print("Intersection:")
     print(intersection(linked_list_1, linked_list_2))
 
 
 # First Test Case
+print("\nFirst test case:")
 element_1 = [3, 2, 4, 35, 6, 65, 6, 4, 3, 21]
 element_2 = [6, 32, 4, 9, 6, 1, 11, 21, 1]
-
 union_and_intersection(element_1, element_2)
-
 
 # Second Test Case
-element_1 = [3, 2, 4, 35, 6, 65, 6, 4, 3, 23]
+print("\nSecond test case:")
+element_1 = []
 element_2 = [1, 7, 8, 9, 11, 21, 1]
-
 union_and_intersection(element_1, element_2)
+
+# Third Test Case
+print("\nThird test case:")
+element_1 = []
+element_2 = []
+union_and_intersection(element_1, element_2)
+
+# Fourth Test Case
+print("\nFourth test case:")
+element_1 = [1, 2, 3]
+element_2 = [97, 98, 99]
+union_and_intersection(element_1, element_2)
+
+
+
