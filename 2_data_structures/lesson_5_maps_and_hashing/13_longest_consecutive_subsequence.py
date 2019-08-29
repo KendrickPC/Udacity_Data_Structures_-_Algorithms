@@ -1,4 +1,22 @@
+# Longest Consecutive Subsequence
+
+'''
+Problem Statement:
+
+Given list of integers that contain numbers in random order, write a
+program to find the longest possible sub sequence of consecutive
+numbers in the array. Return this subsequence in sorted order.
+The solution must take O(n) time
+
+For e.g. given the list 5, 4, 7, 10, 1, 3, 55, 2, the
+output should be 1, 2, 3, 4, 5
+
+*Note: If two arrays are of equal length return the array whose
+ index of smallest element comes first.
+'''
+
 def longest_consecutive_subsequence(input_list):
+    # TODO: Write longest consecutive subsequence solution
     element_dict = dict()
 
     for index, element in enumerate(input_list):
@@ -6,11 +24,11 @@ def longest_consecutive_subsequence(input_list):
 
     max_length = -1
     starts_at = len(input_list)
-
+    # iterate over the list and store element in a suitable data structure
+    
     for index, element in enumerate(input_list):
         current_starts = index
         element_dict[element] = -1
-
         current_count = 1
 
         # check upwards
@@ -19,7 +37,7 @@ def longest_consecutive_subsequence(input_list):
         while current in element_dict and element_dict[current] > 0:
             current_count += 1
             element_dict[current] = -1
-            current = current + 1
+            current += 1
 
         # check downwards
         current = element - 1
@@ -27,7 +45,7 @@ def longest_consecutive_subsequence(input_list):
             current_starts = element_dict[current]
             current_count += 1
             element_dict[current] = -1
-            current = current - 1
+            current -= 1
 
         if current_count >= max_length:
             if current_count == max_length and current_starts > starts_at:
