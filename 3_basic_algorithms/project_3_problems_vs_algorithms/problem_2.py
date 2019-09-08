@@ -19,6 +19,39 @@ Here is some boilerplate code and test cases to start with
 '''
 
 
+def array_search(start, end, input_list, number):
+    middle = (start + end) // 2
+    # Base case
+    if start > end:
+        return -1
+    # If middle is greater than target number.
+    elif input_list[middle] > number:
+        if input_list[start] > input_list[end]:
+            if input_list[end] < number:
+                return array_search(start, middle-1, input_list, number)
+            elif input_list[end] > number:
+                return array_search(middle+1, end, input_list, number)
+            else:
+                return end
+        else:
+            return array_search(start, middle-1, input_list, number)
+    # If middle is less than target number.
+    elif input_list[middle] < number:
+        if input_list[start] > input_list[end]:
+            if input_list[end] < number:
+                return array_search(start, middle-1, input_list, number)
+            elif input_list[end] > number:
+                return array_search(middle+1, end, input_list, number)
+            else:
+                return end
+        else:
+            return array_search(middle+1, end, input_list, number)
+
+    else: 
+        return middle
+
+
+
 def rotated_array_search(input_list, number):
     """
     Find the index by searching in a rotated sorted array
@@ -28,29 +61,38 @@ def rotated_array_search(input_list, number):
     Returns:
        int: Index or -1
     """
-    pass
+    start = 0 
+    end = len(input_list) - 1
+
+    if len(input_list) == 0:
+        return "\nThe list is empty\n"
+
+    print("(target for search, index of target):")
+    return number, array_search(start, end, input_list, number)
 
 
-def linear_search(input_list, number):
-    for index, element in enumerate(input_list):
-        if element == number:
-            return index
-    return -1
+print(rotated_array_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 6))
+# <<< (6, 5)
+print(rotated_array_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 22))
+# <<< (10, 9)
+print(rotated_array_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0], 0)) 
+# <<< (0, -1)
 
 
-def test_function(test_case):
-    input_list = test_case[0]
-    number = test_case[1]
-    if linear_search(input_list, number) == rotated_array_search(input_list, number):
-        print("Pass")
-    else:
-        print("Fail")
+# Edge Cases:
+print("\nDealing with Duplicates:")
+print(rotated_array_search([8, 8, 8, 8, 8, 8, 8], 8))
+
+# Empty list
+print(rotated_array_search([], 0))
+# <<< The list is empty
+
+# Resources for Reference of Rotated Array Search:
+    # https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
+
+# Psuedocode
+    #https://stackoverflow.com/questions/4773807/searching-in-a-sorted-and-rotated-array
 
 
-print("\nDefault Test Cases:")
-test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
-test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
-test_function([[6, 7, 8, 1, 2, 3, 4], 8])
-test_function([[6, 7, 8, 1, 2, 3, 4], 1])
-test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+
 
