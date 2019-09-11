@@ -79,3 +79,5 @@ prices = [78, 54, 45, 37, 34, 23, 18, 12, 9, 9, 7, 2, 2]
 solution = 0
 test_case = [prices, solution]
 test_function(test_case)
+
+# Time complexity of function: 
