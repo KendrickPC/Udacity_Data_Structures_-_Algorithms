@@ -20,3 +20,7 @@ What other roles have you worked in?
 Why not to ask: This seems like a suitable question, but should actually be avoided because you should already know the answer! As part of your interview preparation, you’ll inevitably look up information on the interviewee’s work history via their LinkedIn profile. Remember, you want to spend the precious amount of time you have for this interview on getting answers to questions that you would not be able to find online.
 
 What to ask instead: If you wish to learn more about a certain aspect of their work experience, try preparing questions that show you've done your research and have put much thought into what you want to discuss with them. For example, "I see you've worked at [this company]. Why did you decide to switch jobs?"
+
+
+### LinkedIn Endorsements
+https://www.forbes.com/sites/susanadams/2013/12/24/everything-you-need-to-know-about-linkedin-endorsements-2/#5eb7c52b2b87
